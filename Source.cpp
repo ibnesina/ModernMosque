@@ -422,29 +422,29 @@ void renderScene(Shader &shader) {
     fountain.render(shader);
 }
 
-void drawBranch(Shader &shader, glm::mat4 model, int depth) {
-    if (depth == 0) return;
+// void drawBranch(Shader &shader, glm::mat4 model, int depth) {
+//     if (depth == 0) return;
 
-    // Render branch
-    glBindVertexArray(1); // Assuming VAO 1 is for branch
-    shader.setMat4("model", model);
-    glDrawArrays(GL_LINES, 0, 2);
+//     // Render branch
+//     glBindVertexArray(1); // Assuming VAO 1 is for branch
+//     shader.setMat4("model", model);
+//     glDrawArrays(GL_LINES, 0, 2);
 
-    // Create transformations
-    glm::mat4 leftBranch = model;
-    leftBranch = glm::translate(leftBranch, glm::vec3(0.0f, 1.0f, 0.0f));
-    leftBranch = glm::rotate(leftBranch, glm::radians(-30.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-    leftBranch = glm::scale(leftBranch, glm::vec3(0.7f, 0.7f, 1.0f));
+//     // Create transformations
+//     glm::mat4 leftBranch = model;
+//     leftBranch = glm::translate(leftBranch, glm::vec3(0.0f, 1.0f, 0.0f));
+//     leftBranch = glm::rotate(leftBranch, glm::radians(-30.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+//     leftBranch = glm::scale(leftBranch, glm::vec3(0.7f, 0.7f, 1.0f));
 
-    glm::mat4 rightBranch = model;
-    rightBranch = glm::translate(rightBranch, glm::vec3(0.0f, 1.0f, 0.0f));
-    rightBranch = glm::rotate(rightBranch, glm::radians(30.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-    rightBranch = glm::scale(rightBranch, glm::vec3(0.7f, 0.7f, 1.0f));
+//     glm::mat4 rightBranch = model;
+//     rightBranch = glm::translate(rightBranch, glm::vec3(0.0f, 1.0f, 0.0f));
+//     rightBranch = glm::rotate(rightBranch, glm::radians(30.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+//     rightBranch = glm::scale(rightBranch, glm::vec3(0.7f, 0.7f, 1.0f));
 
-    // Recursive call
-    drawBranch(shader, leftBranch, depth - 1);
-    drawBranch(shader, rightBranch, depth - 1);
-}
+//     // Recursive call
+//     drawBranch(shader, leftBranch, depth - 1);
+//     drawBranch(shader, rightBranch, depth - 1);
+// }
 
 int main()
 {
@@ -1963,13 +1963,13 @@ int main()
         
         ///
 
-        glm::mat4 modell = glm::mat4(1.0f);
-        modell = glm::translate(modell, glm::vec3(37.0f, 1.0f, -27.0f)); // Start from bottom
+        // glm::mat4 modell = glm::mat4(1.0f);
+        // modell = glm::translate(modell, glm::vec3(37.0f, 1.0f, -27.0f)); // Start from bottom
 
-        drawBranch(ourShader, modell, 5); // Recursion depth
+        // drawBranch(ourShader, modell, 5); // Recursion depth
 
-        glfwSwapBuffers(window);
-        glfwPollEvents();
+        // glfwSwapBuffers(window);
+        // glfwPollEvents();
 
 
         //FAN1
